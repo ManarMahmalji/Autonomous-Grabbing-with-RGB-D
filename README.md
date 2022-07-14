@@ -4,8 +4,11 @@
 ## July 2022 Manar Mahmalji 
 ### Software versions 
 • Operating system: Ubuntu 20.04.4 LTS
-• OpenCV2 4.5.5
-• Python: version 3.8.10
+
+• OpenCV: 4.5.5
+
+• Python: 3.8.10
+
 • ROS: Noetic
 
 This repository contains all the scripts used in the master thesis entitled " Autonmous Grabbing with RGB-D", in which an Intel Realsense D455 camera is used to enable a Kuka IIWA 14 robotic arm grab and track a suspended block with the help of ArUco markers. The full report can be found [here](https://github.com/ManarMahmalji/Autonomous-Grabbing-with-RGB-D/files/9111195/2022_EM_Meca_Manar_Mahmalji-compressed.pdf).
