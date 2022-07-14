@@ -15,7 +15,7 @@ This repository contains all the scripts used in the master thesis entitled " Au
 
 ### Contents: 
 - ArUco tools: utiltiy tools for displaying and recoding the poses of ArUco markers and board wrt camera frame. 
-- Eye-to-hand Calibration: this corresponds to chapter 4 of the thesis, where the transforamtion from the camera frame to the robot base is obtained. The calibration is performed with OpenCV and there are several scripts that help organize and validate the calibration data. A detailed ReadMe file is present for this process. 
+- Eye-to-hand Calibration: this corresponds to chapter 4 of the thesis, where the transforamtion from the camera frame to the robot base frame is obtained. The calibration is performed with OpenCV and there are several scripts that help organize and validate the calibration data. A detailed ReadMe file is present for this process. 
 <p align="center" width="100%">
     <img width="80%" src="https://user-images.githubusercontent.com/31004981/178968130-a5f84c4c-e77f-422e-b9bd-4f80a9702f36.png">
 </p>
