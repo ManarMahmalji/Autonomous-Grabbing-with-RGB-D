@@ -1,0 +1,76 @@
+% ############################################################
+% ## BRUFACE: Brussels Faculty of Engineering 
+% ############################################################
+% ## Master Thesis " Autonmous Grabbing with RGB-D"  
+% ## July 2022 Manar Mahmalji      
+% ## Version (1)     
+% ############################################################
+% ##This code is a continuation of the python script that 
+% ##performs convergence study on the eye-to-hand calibration.
+% ##What this code should recieve is an excel file with the obtained 
+% ##poses at differnt numbers of samples for each of the 5 calibration
+% ##methods
+
+disp("hello")
+close all
+clear 
+
+%%
+filename="convergence_calib4.xlsx";
+N= 25; % Number of samples
+samples=8:N;
+Tsai= zeros(length(samples),6);
+Park= zeros(length(samples),6);
+Horaud= zeros(length(samples),6);
+Andreff= zeros(length(samples),6);
+Daniliidis= zeros(length(samples),6);
+
+% for each number of samples, extract the obtained poses corresponding
+% to each calibration method
+for i=1:length(samples)
+ data= readmatrix(filename,'Sheet',[num2str(samples(i)) ' samples']); 
+ data= data(:,2:end);
+ Tsai(i,:)= data(1,:);
+ Park(i,:)= data(2,:);
+ Horaud(i,:)= data(3,:);
+ Andreff(i,:)=data(4,:);
+ Daniliidis(i,:)= data(5,:);
+end
+
+
+% Plotting the 6 pose elements vs the number of samples
+plot(samples,Tsai(:,1),samples,Park(:,1),samples,Horaud(:,1),samples,Andreff(:,1),samples,Daniliidis(:,1),"LineWidth",2) 
+xlabel("Number of samples")
+ylabel("x(mm)")
+title("Convergence study: x")
+legend('Tsai','Park','Horaud', 'Andreff','Daniilidis')
+figure
+plot(samples,Tsai(:,2),samples,Park(:,2),samples,Horaud(:,2),samples,Andreff(:,2),samples,Daniliidis(:,2),"LineWidth",2) 
+xlabel("Number of samples")
+ylabel("y(mm)")
+title("Convergence study: y")
+legend('Tsai','Park','Horaud', 'Andreff','Daniilidis')
+figure
+plot(samples,Tsai(:,3),samples,Park(:,3),samples,Horaud(:,3),samples,Andreff(:,3),samples,Daniliidis(:,3),"LineWidth",2) 
+xlabel("Number of samples")
+ylabel("z(mm)")
+title("Convergence study: z")
+legend('Tsai','Park','Horaud', 'Andreff','Daniilidis')
+figure
+plot(samples,Tsai(:,4),samples,Park(:,4),samples,Horaud(:,4),samples,Andreff(:,4),samples,Daniliidis(:,4),"LineWidth",2) 
+xlabel("Number of samples")
+ylabel("roll(degree)")
+title("Convergence study: roll")
+legend('Tsai','Park','Horaud', 'Andreff','Daniilidis')
+figure
+plot(samples,Tsai(:,5),samples,Park(:,5),samples,Horaud(:,5),samples,Andreff(:,5),samples,Daniliidis(:,5),"LineWidth",2) 
+xlabel("Number of samples")
+ylabel("pitch(degree)")
+title("Convergence study: pitch")
+legend('Tsai','Park','Horaud', 'Andreff','Daniilidis')
+figure
+plot(samples,Tsai(:,6),samples,Park(:,6),samples,Horaud(:,6),samples,Andreff(:,6),samples,Daniliidis(:,6),"LineWidth",2) 
+xlabel("Number of samples")
+ylabel("yaw(degree)")
+title("Convergence study: yaw")
+legend('Tsai','Park','Horaud', 'Andreff','Daniilidis')
