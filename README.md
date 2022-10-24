@@ -1,6 +1,6 @@
 
 # BRUFACE: Brussels Faculty of Engineering 
-## Master Thesis " Autonmous Grabbing with RGB-D"  
+## Master Thesis "Autonmous Grabbing with RGB-D"  
 ## July 2022 Manar Mahmalji 
 ### Software versions 
 • Operating system: Ubuntu 20.04.4 LTS
